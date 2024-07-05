@@ -25,15 +25,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         && docker-php-ext-install -j$(nproc) gd \
         && docker-php-ext-install pdo_mysql mysqli soap bcmath pcntl sockets zip
 
-RUN rm -r /var/lib/apt/lists/*
-
 RUN pecl install redis \
-        #&& pecl install xdebug-2.6.0 \
         && pecl install swoole-4.5.10 \
         && pecl install mongodb \
         && pecl install memcached \
         && pecl install imagick \
         && docker-php-ext-enable redis swoole mongodb memcached imagick opcache
+
+RUN rm -r /var/lib/apt/lists/*
 
 # 安装composer并允许root用户运行
 ENV COMPOSER_ALLOW_SUPERUSER=1
