@@ -29,7 +29,7 @@ RUN rm -r /var/lib/apt/lists/*
 
 RUN pecl install redis \
         #&& pecl install xdebug-2.6.0 \
-        && pecl install swoole4.5.10 \
+        && pecl install swoole-4.5.10 \
         && pecl install mongodb \
         && pecl install memcached \
         && pecl install imagick \
