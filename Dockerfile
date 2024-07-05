@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         && docker-php-ext-install pdo_mysql mysqli soap bcmath pcntl sockets zip
 RUN pecl install redis \
         #&& pecl install xdebug-2.6.0 \
-        && pecl install swoole \
+        && pecl install swoole4.5 \
         && pecl install mongodb \
         && pecl install memcached \
         && pecl install imagick \
