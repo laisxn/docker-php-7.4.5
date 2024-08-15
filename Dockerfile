@@ -32,8 +32,7 @@ RUN pecl install redis \
         && pecl install swoole \
         && pecl install mongodb \
         && pecl install memcached \
-        && pecl install imagick \
-        && docker-php-ext-enable redis swoole mongodb memcached imagick opcache
+        && docker-php-ext-enable redis swoole mongodb memcached opcache
 
 # 安装composer并允许root用户运行
 ENV COMPOSER_ALLOW_SUPERUSER=1
